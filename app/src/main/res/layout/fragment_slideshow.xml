@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/s_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <Button
+                android:id="@+id/selectphoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/s_imageView"
+                android:backgroundTint="@android:color/transparent"
+                android:text="Select Photo "
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                />
+
+            <Button
+                android:id="@+id/public_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s_imageView"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="start"
+                android:padding="5dp"
+                android:tag="p"
+                android:text="public"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s_imageView"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="slider Show "
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+
+                    />
+
+                <Spinner
+                    android:id="@+id/spiner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/titile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Slider Titile "
+
+            />
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload"></Button>
+
+        <Button
+            android:id="@+id/slidermantines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Slider Mainess"
+
+            ></Button>
+
+
+    </LinearLayout>
+
+</LinearLayout>

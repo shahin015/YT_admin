@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "1057811530678",
+    "firebase_url": "https://skill-buider-yt-default-rtdb.firebaseio.com",
+    "project_id": "skill-buider-yt",
+    "storage_bucket": "skill-buider-yt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057811530678:android:6d3ef2729f912e31707717",
+        "android_client_info": {
+          "package_name": "com.shahindemunav.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDShgC63YC4JLK5m2ZX4BNqxyoWW7Aelwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057811530678:android:89a8a9b4b30f3134707717",
+        "android_client_info": {
+          "package_name": "com.shahindemunav.drawerwithbottomnavigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDShgC63YC4JLK5m2ZX4BNqxyoWW7Aelwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057811530678:android:c60ad76219c7bea8707717",
+        "android_client_info": {
+          "package_name": "com.sr.ytadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDShgC63YC4JLK5m2ZX4BNqxyoWW7Aelwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057811530678-7529l76npvo7e76pk1a9s37bnkfv80n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
