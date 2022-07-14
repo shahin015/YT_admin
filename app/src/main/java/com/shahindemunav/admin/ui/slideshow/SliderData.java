@@ -2,12 +2,13 @@ package com.shahindemunav.admin.ui.slideshow;
 
 public class SliderData {
     String imageUrl,
-            title,pub;
+            title,pub,key;
 
-    public SliderData(String imageUrl, String title, String pub) {
+    public SliderData(String imageUrl, String title, String pub, String key) {
         this.imageUrl = imageUrl;
         this.title = title;
         this.pub = pub;
+        this.key = key;
     }
 
     public SliderData() {
@@ -35,5 +36,13 @@ public class SliderData {
 
     public void setPub(String pub) {
         this.pub = pub;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

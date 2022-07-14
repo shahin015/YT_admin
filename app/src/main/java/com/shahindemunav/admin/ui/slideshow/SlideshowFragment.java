@@ -1,5 +1,7 @@
 package com.shahindemunav.admin.ui.slideshow;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,19 +25,25 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.shahindemunav.admin.R;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,11 +51,15 @@ public class SlideshowFragment extends Fragment {
 
 
     private ImageView sliderImge;
+    private TextView countText;
     private EditText titile;
     private Spinner count;
-    private Button selectphto,upload,btn_public,sliderMantincess;
+    private SliderAdpter adpter;
+    private ArrayList<SliderData>list;
+    private Button selectphto,upload,btn_public;
     private SliderData sliderData;
-    private DatabaseReference databaseReference,refcount;
+    private DatabaseReference databaseReference,refcount,ref;
+    private RecyclerView recyclerView;
 
     private final int REQ=1;
     private Bitmap bitmap;
@@ -69,16 +81,22 @@ public class SlideshowFragment extends Fragment {
 
         sliderImge=root.findViewById(R.id.s_imageView);
         titile=root.findViewById(R.id.titile);
-        sliderMantincess=root.findViewById(R.id.slidermantines);
+        countText=root.findViewById(R.id.counttext);
         btn_public=root.findViewById(R.id.public_btn);
         count=root.findViewById(R.id.spiner);
         selectphto=root.findViewById(R.id.selectphoto);
         upload=root.findViewById(R.id.upload);
+        recyclerView=root.findViewById(R.id.recylerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        recyclerView.setHasFixedSize(true);
+
         databaseReference= FirebaseDatabase.getInstance().getReference("slider");
         refcount= FirebaseDatabase.getInstance().getReference("Count");
 
         storageReference= FirebaseStorage.getInstance().getReference();
+        ref= FirebaseDatabase.getInstance().getReference();
         progressDialog=new ProgressDialog(getContext());
+
 
 
         setSpnnerData();
@@ -88,6 +106,8 @@ public class SlideshowFragment extends Fragment {
                 SelectPhoto();
             }
         });
+
+
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,6 +121,30 @@ public class SlideshowFragment extends Fragment {
                 UploadPhoto(titiles,pub);
             }
         });
+
+        countText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressDialog.setMessage("Slider Update");
+                progressDialog.show();
+                refcount.child("count").setValue(count.getSelectedItem().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        progressDialog.dismiss();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+
+                    }
+                });
+            }
+        });
+
+
+
         btn_public.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,9 +160,47 @@ public class SlideshowFragment extends Fragment {
 
             }
         });
-        sliderMantincess.setOnClickListener(new View.OnClickListener() {
+
+        get_data_for_recylerView();
+        return root;
+    }
+
+    private void get_data_for_recylerView() {
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                list=new ArrayList<>();
+                for (DataSnapshot snapshot1:snapshot.getChildren()){
+                    SliderData data=snapshot1.getValue(SliderData.class);
+                    list.add(data);
+                }
+                adpter=new SliderAdpter(getContext(),list);
+                adpter.notifyDataSetChanged();
+                recyclerView.setAdapter(adpter);
+
+
+
+
+
+                ////  imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/skill-buider-yt.appspot.com/o/slider%2F%5BB%407f400e4.jpg?alt=media&token=ff451b97-f797-40d7-8eaf-c838a6564378", "photoTitile1", null));
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
@@ -126,10 +208,10 @@ public class SlideshowFragment extends Fragment {
 
 
 
-        return root;
+
+
+
     }
-
-
 
 
     private void setSpnnerData() {
@@ -145,6 +227,26 @@ public class SlideshowFragment extends Fragment {
         nomeConsulta.add("8");
         nomeConsulta.add("9");
         nomeConsulta.add("10");
+        nomeConsulta.add("11");
+        nomeConsulta.add("12");
+        nomeConsulta.add("13");
+        nomeConsulta.add("14");
+        nomeConsulta.add("15");
+        nomeConsulta.add("16");
+        nomeConsulta.add("17");
+        nomeConsulta.add("18");
+        nomeConsulta.add("19");
+        nomeConsulta.add("20");
+        nomeConsulta.add("21");
+        nomeConsulta.add("22");
+        nomeConsulta.add("23");
+        nomeConsulta.add("24");
+        nomeConsulta.add("25");
+        nomeConsulta.add("10");
+        nomeConsulta.add("26");
+        nomeConsulta.add("27");
+        nomeConsulta.add("28");
+        nomeConsulta.add("29");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, nomeConsulta);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -225,7 +327,7 @@ public class SlideshowFragment extends Fragment {
     private void Upload_All_Data(String dewonloadURl,String titile ,ProgressDialog progressDialog,String pub) {
 
         final  String unikey=databaseReference.push().getKey();
-        databaseReference.child(unikey).setValue(new SliderData(dewonloadURl,titile,pub)).addOnSuccessListener(new OnSuccessListener<Void>() {
+        databaseReference.child(unikey).setValue(new SliderData(dewonloadURl,titile,pub,unikey)).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 String counts=count.getSelectedItem().toString();
@@ -270,13 +372,23 @@ public class SlideshowFragment extends Fragment {
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+     @Override
+     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode ==REQ) {
-            //TODO: action
+
+        if (requestCode==REQ &&resultCode==RESULT_OK){
+            Uri uri=data.getData();
+            try {
+                bitmap=MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(),uri);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             sliderImge.setImageBitmap(bitmap);
         }
+
     }
+
 }

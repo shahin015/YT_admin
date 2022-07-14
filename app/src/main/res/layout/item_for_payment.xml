@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:id="@+id/layout"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:id="@+id/rel1"
+        android:layout_alignParentTop="true"
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            android:id="@+id/lay1"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="fill_parent"
+                android:text="New Paymet form:"
+                android:textColor="#3CED14"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_margin="5dp"
+                android:padding="1dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2.8"
+                android:layout_height="fill_parent"
+                android:text="New Member"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:id="@+id/ordername"
+                android:maxLength="12"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:layout_margin="5dp"
+
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="fill_parent"
+                android:text="Pending"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/stasus"
+                android:maxLength="15"
+                android:ellipsize="end"
+                android:padding="1dp"
+                android:gravity="start"
+                android:layout_margin="5dp"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/two_color_curved"
+            android:layout_below="@id/lay1"
+            />
+
+        <LinearLayout
+            android:layout_below="@id/lay1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/lay2"
+
+            >
+            <View
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:background="@drawable/two_color_curved"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/two_color_curved" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/two_color_curved" />
+
+
+            </RelativeLayout>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/lay3"
+            android:layout_below="@id/lay1"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="User Id Key "
+                    android:textColor="#C51717"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="User Key "
+                    android:id="@+id/userkey"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+             />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/two_color_curved"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Total Payment:"
+                    android:gravity="end"
+                    android:textColor="#D1237D"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Total Payment  "
+                    android:gravity="start"
+                    android:id="@+id/totalpayment"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/two_color_curved"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Sender  Account NO:"
+                    android:textColor="#DA0E0E"
+                    android:textSize="14dp"
+                    android:gravity="end"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="01950458291 "
+                    android:id="@+id/payment_account"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+                    />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/two_color_curved"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="end"
+                    android:text="Transction ID:"
+                    android:textColor="#00BCD4"
+                    android:textSize="18dp"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="xyz "
+                    android:id="@+id/transctionId"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:gravity="start"
+                    android:padding="2dp"
+
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/two_color_curved"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Rafer Code"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:gravity="end"
+                    android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Rafer code "
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:id="@+id/refalcode"
+                    android:padding="2dp"
+                    android:gravity="start"
+
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/two_color_curved"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Payment Methord:"
+                    android:textColor="#FF3B3B"
+                    android:textSize="14dp"
+                    android:padding="2dp"
+
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="bKash "
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:id="@+id/payment_methord"
+                    android:padding="2dp"
+                    android:gravity="start"
+
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:weightSum="3"
+        android:layout_below="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/two_color_curved"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/delete"
+            android:text="Delete"
+            />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/two_color_curved"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/valid"
+            android:text="Vaild User"
+            />
+        <Button
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/two_color_curved"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/hide"
+            android:text="Hide"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
